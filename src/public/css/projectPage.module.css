@@ -1,0 +1,573 @@
+:root {
+    --card-background-color: #272727;
+    --task-background-color: #454545;
+}
+
+.section {
+    margin-left: var(--header-hide-width);
+    width: calc(100vw - var(--header-hide-width) - 150px);
+    height: 100vh;
+    padding-top: 100px;
+    margin-bottom: 150px;
+}
+
+.header {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    color: var(--main-color);
+}
+.header h2{
+    text-align:center;
+    height:fit-content;
+    max-height:100px;
+    overflow:hidden;
+}
+
+    .header button {
+        background-color: transparent;
+        border: none;
+        font-size: 2.1em;
+        color: var(--main-color);
+    }
+
+        .header button i{
+            transition-duration:250ms;
+        }
+        .header button:hover i{
+            transition-duration:250ms;
+            color: gray;
+        }
+
+.taskGroupList {
+    margin-top: 70px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .taskGroupList * {
+        margin: 0;
+        padding: 0;
+    }
+
+.taskGroup {
+    margin: 20px;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    height: fit-content;
+    background-color: var(--card-background-color);
+
+    cursor:grab;
+}
+
+.taskGroupHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+    .taskGroupHeader p {
+        font-size: 1.3em;
+    }
+    .taskGroupHeader button i{
+        transition-duration:250ms;
+    }
+    .taskGroupHeader button:hover i{
+        transition-duration:250ms;
+        color:gray;
+    }
+
+    .taskGroupList {
+        justify-content: center;
+    }
+
+.taskGroupList button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--main-color);
+}
+
+.taskGroupBody .task {
+    background-color: var(--task-background-color);
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+    padding: 8px 15px;
+    margin: 5px 0;
+    color: var(--main-color);
+    overflow: hidden;
+    cursor: grab;
+    max-height: 120px;
+}
+    .taskGroupBody .task.overdue {
+        background-color:darkred;
+    }
+    .taskGroupBody .task.complete {
+        background-color:darkgreen;
+    }
+
+.taskGroupFooter {
+    margin-top: 15px;
+}
+
+    .taskGroupFooter button {
+        display: flex;
+        align-items: center;
+        padding: 8px 10px;
+        border-radius: 15px;
+    }
+
+        .taskGroupFooter button p {
+            margin-left: 25px;
+        }
+
+        .taskGroupFooter button:hover {
+            background-color: var(--task-background-color);
+        }
+
+    .taskGroupFooter .btnFull {
+        width: 100%;
+    }
+
+    .taskGroupFooter textarea {
+        background-color: var(--task-background-color);
+        width: 100%;
+        text-align: left;
+        border-radius: 10px;
+        padding: 8px 15px;
+        margin: 5px 0;
+        resize: none;
+        color: var(--main-color);
+    }
+
+.linksContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .linksContainer button:nth-child(1) {
+        background-color: var(--task-background-color);
+        font-size: 1.2em;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .linksContainer button:nth-child(2) i {
+        font-size: 1.5em;
+        text-decoration: none;
+        transition-duration: 250ms;
+    }
+    .linksContainer button:hover:nth-child(2) i{
+        color:gray;
+        transition-duration:250ms;
+    }
+
+    .linksContainer button:hover {
+        background-color: dimgrey;
+    }
+
+    .linksContainer button:nth-child(2):hover {
+        color: red;
+        background-color: transparent;
+    }
+
+button.btnAddTaskGroup {
+    padding: 10px 35px;
+    background-color: var(--card-background-color);
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 1.3em;
+    margin: 25px;
+}
+
+    button.btnAddTaskGroup:hover {
+        background-color: dimgray;
+    }
+
+.btnAddTaskGroup i {
+    margin-right: 25px;
+}
+
+.addGroupForm {
+    width: 300px;
+    height: fit-content;
+    padding: 20px;
+
+    background-color: var(--card-background-color);
+    margin: 20px 20px;
+    border-radius: 15px;
+}
+
+    .addGroupForm input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid var(--main-color);
+        font-size: 1.2em;
+        outline: none;
+        color: var(--main-color);
+        margin-bottom: 20px;
+    }
+
+    .addGroupForm button {
+        padding: 5px 0;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+        .addGroupForm button:hover {
+            background-color: dimgrey;
+        }
+
+        .addGroupForm button:first-child {
+            width: 90%;
+        }
+
+
+.modalProjectSetting .mainSetting {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: right;
+    margin: 20px 0;
+}
+
+.modalProjectSetting h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.modalProjectSetting .mainSetting .textContainer,
+.modalProjectSetting .mainSetting .imageContainer {
+    width: 50%;
+}
+
+.modalProjectSetting .textInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.modalProjectSetting label {
+    font-size: 1.5em;
+}
+
+.modalProjectSetting input,
+.modalProjectSetting textarea {
+    border: none;
+    outline: none;
+    width: 80%;
+    margin: 20px 0;
+    font-size: 1.3em;
+    border-bottom: 2px solid var(--main-color);
+    background-color: transparent;
+    color: var(--main-color);
+}
+.modalProjectSetting textarea{
+    max-height:120px;
+}
+
+.modalProjectSetting .imageContainer img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.modalProjectSetting .btnDark {
+    padding: 5px 25px;
+    margin: 15px 0;
+}
+
+.modalProjectSetting .usersSetting {
+    width: 90%;
+}
+
+    .modalProjectSetting .usersSetting form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .modalProjectSetting .usersSetting input {
+        width: 45%;
+    }
+
+    .modalProjectSetting .usersSetting .btnDark {
+        margin-left: 50px;
+        font-size: 1.5em;
+    }
+
+    .modalProjectSetting .usersSetting .userList {
+        margin: 25px 0;
+    }
+
+        .modalProjectSetting .usersSetting .userList .userBlock {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .modalProjectSetting .usersSetting .userList .userBlock img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .modalProjectSetting .usersSetting .userList .userBlock p {
+                font-size: 1.5em;
+                width:100px;
+                text-align:left;
+                overflow:hidden;
+            }
+            .modalProjectSetting .usersSetting .userList .userBlock p:nth-child(3) {
+                width: 250px;
+            }
+
+            .modalProjectSetting .usersSetting .userList .userBlock button {
+                background-color: transparent;
+                border: none;
+                font-size: 1.6em;
+                color: var(--main-color);
+            }
+
+                .modalProjectSetting .usersSetting .userList .userBlock button:hover {
+                    color: red;
+                }
+.modalTaskSetting,
+.modalTaskGroupSetting {
+    height: fit-content !important;
+    width: 40% !important;
+}
+
+    .modalTaskGroupSetting .groupSettingBody {
+        width: 90%;
+        padding-bottom: 30px;
+    }
+
+    .taskSettingBody {
+        width: 90%;
+        padding-bottom: 30px;
+    }
+.optionContainer{
+    margin-bottom:25px;
+}
+.optionContainer,
+.optionContainer label {
+    width: 100%;
+    font-size: 1.1em;
+}
+    .optionContainer label i{
+        margin-right:5%;
+    }
+    .optionContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .optionContainer:nth-child(3){
+        justify-content:space-between;
+    }
+    .optionContainer .dateContainer {
+        width: 45%;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+    }
+    .optionContainer input,
+    .optionContainer textarea{
+        margin:10px 0;
+        font-size:1.2em;
+        width: 95%;
+        height:fit-content;
+        background-color:transparent;
+        border:none;
+        outline:none;
+        color:var(--main-color);
+        max-height:150px;
+        border-bottom: 2px solid var(--main-color);
+    }
+    .optionContainer .dateContainer input {
+        width:90%;
+    }
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.btnDark{
+    text-decoration:underline;
+    padding:5px 15px;
+    font-size:1.5em;
+}
+    .btnDark:hover {
+        text-decoration:none;
+    }
+
+.otherSetting {
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.otherSetting .btnWarn{
+    width:fit-content;
+    color:red;
+    text-align:center;
+}
+    .otherSetting .btnWarn:hover {
+        background-color:darkred;
+        color: var(--main-color);
+    }
+@media (max-width:1450px) {
+    .optionContainer:nth-child(3) {
+        justify-content: flex-end;
+    }
+
+    .optionContainer .dateContainer {
+        margin-bottom:20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+        .optionContainer .dateContainer input {
+            width: 95%;
+        }
+}
+
+@media (max-width:1200px){
+    .modalProjectSetting h2 {
+        margin-top: 30px;
+    }
+    .modalProjectSetting .usersSetting .userList{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    .modalProjectSetting .usersSetting .userList .userBlock {
+        width: 80%;
+    }
+    .modalProjectSetting .usersSetting .userList .userBlock p{
+        width: none;
+    }
+    .modalProjectSetting .usersSetting .userList .userBlock p:nth-child(3) {
+        display:none;
+    }
+
+    .modalProjectSetting .mainSetting .textContainer,
+    .modalProjectSetting .mainSetting .imageContainer {
+        width: 100%;
+    }
+        .modalProjectSetting .mainSetting .imageContainer{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            align-items:flex-start;
+            }
+    .modalProjectSetting .mainSetting .imageContainer .textInput{
+        width:calc(100% - 200px);
+    }
+            .modalProjectSetting .mainSetting .imageContainer img {
+                width: 150px;
+                height: 200px;
+            }
+            .modalProjectSetting label {
+                text-align: center;
+            }
+
+    .modalProjectSetting input,
+    .modalProjectSetting textarea {
+        width: 100%;
+    }
+    .modalProjectSetting .mainSetting {
+        justify-content: center;
+    }
+}
+@media (max-width:1000px){
+
+    .modalProjectSetting .usersSetting .userList .userBlock {
+        width: 100%;
+    }
+    .modalTaskGroupSetting,
+    .modalTaskSetting {
+        width: 60% !important;
+    }
+}
+@media (max-width:800px) {
+
+    .modalProjectSetting .mainSetting .imageContainer {
+        flex-direction: column;
+        align-items:center;
+        margin: 20px 0;
+        }
+        .modalProjectSetting .mainSetting .imageContainer .textInput {
+            width: 100%;
+        }
+    .header h2{
+        font-size:2.5em;
+    }
+
+
+    .header button {
+        font-size: 1.9em;
+    }
+}
+@media (max-width:670px) {
+    .modalProjectSetting h2 {
+        font-size:2em;
+    }
+    .modalProjectSetting .usersSetting form {
+        flex-direction:column;
+        align-items:center;
+    }
+    .modalProjectSetting .usersSetting .btnDark {
+        margin-left: 0px;
+    }
+    .modalProjectSetting .usersSetting input {
+        width: 95%;
+    }
+    .otherSetting {
+        width: 90%;
+    }
+    .modalProjectSetting {
+        width: 90% !important;
+    }
+
+    .modalTaskGroupSetting,
+    .modalTaskSetting {
+        width: 75% !important;
+    }
+}
+@media(max-width:600px) {
+    .section {
+        margin-left: 0;
+        width: 80vw;
+        height: 100vh;
+    }
+    .taskGroupList {
+        padding-bottom: 200px;
+    }
+}
+@media (max-width:550px) {
+    .modalProjectSetting .usersSetting .userList .userBlock img {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .modalTaskGroupSetting,
+    .modalTaskSetting {
+        width: 90% !important;
+    }
+}

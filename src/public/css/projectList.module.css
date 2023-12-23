@@ -1,0 +1,140 @@
+.card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    border: none;
+    border-radius: 10px;
+    margin: 50px;
+}
+.front, .back {
+    background-color: var(--header-bg-color);
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    backface-visibility: hidden;
+    transition-duration: 1s;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px #8080808c;
+}
+.front {
+    background-blend-mode: lighten;
+}
+    .front .container {
+        width: 100%;
+        height: 100%;
+        background-color: #00000085;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        .front .container p {
+            color: var(--main-color);
+            font-size: 2.5em;
+            text-align: center;
+        }
+.back {
+    transform: rotateY(180deg);
+    background-image: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.back p{
+    color:var(--main-color);
+    font-size:1.8em;
+    text-align:center;
+}
+    .back button {
+        background-color: transparent;
+        border: none;
+        font-size: 1.5em;
+        text-decoration: underline;
+        transition-duration: 250ms;
+        letter-spacing: 2px;
+        margin: 10px 0;
+        color: var(--main-color);
+    }
+    .back button:hover {
+        color:gray;
+        transition-duration:250ms;
+    }
+
+.card:hover {
+    perspective: 1000px;
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+    transition-duration: 1s;
+    transition-timing-function:ease;
+}
+    .card:hover .back {
+        transform: rotateY(360deg);
+        transition-duration: 1s;
+        transition-timing-function: ease;
+    }
+
+.projectListSection {
+    margin-left: var(--header-hide-width);
+    width: calc(100vw - var(--header-hide-width) - 150px);
+    height: 100vh;
+}
+    .projectListSection h2 {
+        text-align: center;
+        font-size: 3em;
+        margin-top: 100px;
+        margin-bottom: 80px;
+        color: var(--main-color);
+    }
+
+.projectListContainer {
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    perspective: 1200px;
+}
+
+    .projectAddCard i {
+        font-size: 4.5em;
+        color:white;
+    }
+.projectAddCard form{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+    .projectAddCard form input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid var(--main-color);
+        font-size: 1.2em;
+        color: var(--main-color);
+    }
+    .projectAddCard form button {
+        font-size: 1.3em;
+        padding: 5px 15px;
+    }
+
+@media(max-width:600px) {
+
+    .projectListSection {
+        margin-left: 0;
+        width: 95vw;
+        height: 100vh;
+    }
+    .projectListContainer{
+        padding-bottom:200px;
+    }
+}

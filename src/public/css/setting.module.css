@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+section.setting {
+    margin-left: var(--header-hide-width);
+    width: calc(100vw - var(--header-hide-width));
+    height: 100vh;
+    padding-top: 150px;
+    margin-bottom: 150px;
+}
+
+section.userSetting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    section.userSetting h2 {
+        text-align: center;
+        font-size: 3em;
+        color: var(--main-color);
+    }
+
+    section.userSetting img {
+        width: 25vw;
+        object-fit: cover;
+        height: 25vw;
+        border-radius: 50%;
+        margin: 50px 0;
+
+        cursor:pointer;
+    }
+
+.infoContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .infoContainer .inputContainer{
+        display:flex;
+        flex-direction:column;
+        width:60%;
+        margin-top:30px;
+    }
+    .infoContainer label {
+        color: var(--main-color);
+        font-size: 1.85em;
+        margin-bottom: 10px;
+    }
+    .infoContainer input {
+        border: 2px solid var(--main-color);
+        color: var(--main-color);
+        border-radius: 10px;
+        font-size: 2em;
+        padding: 10px 20px;
+        outline: none;
+        background-color: transparent;
+    }
+.btnContainer{
+    width:60%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    margin:125px;
+}
+    .btnContainer button {
+        background-color: transparent;
+        color: var(--main-color);
+        border: none;
+        outline: none;
+        text-decoration: underline;
+        font-size: 2em;
+        padding: 10px 20px;
+        border-radius: 25px;
+    }
+        .btnContainer button:hover {
+            background-color: var(--header-bg-color);
+            text-decoration: none;
+        }
+    .btnContainer button.btnWarn {
+        color: red;
+    }
+        .btnContainer button.btnWarn:hover {
+            color: var(--main-color);
+            background-color: darkred;
+        }
+
+
+.modalImageChange{
+    padding:10px 10px;
+    width:fit-content !important;
+    height:fit-content !important;
+}
+.modalImageChange .header{
+    margin:0;
+    padding:0 !important;
+}
+.imageChangeBody {
+    width: 300px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .imageChangeBody img{
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        object-fit:cover;
+        object-position:center;
+        margin: 25px 0;
+    }
+    .optionContainer {
+        width:100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .optionContainer label{
+        font-size: 1.3em;
+
+    }
+    .optionContainer input {
+        margin:15px 0;
+        font-size: 1.2em;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+    }
+.imageChangeBody button{
+    font-size:1.6em;
+    padding:5px 15px;
+    margin-bottom:20px;
+}
+
+@media(max-width:1100px){
+
+    section.userSetting img {
+        width: 35vw;
+        height: 35vw;
+        margin: 30px 0;
+    }
+}
+@media(max-width:1100px) {
+
+    .infoContainer label {
+        font-size: 1.55em;
+    }
+
+    .infoContainer input {
+        font-size: 1.7em;
+    }
+    .btnContainer button {
+        font-size: 1.7em;
+    }
+}
+@media(max-width:600px) {
+    section.setting {
+        margin-left: 0;
+        width: 95vw;
+    }
+    section.userSetting img {
+        width: 55vw;
+        height: 55vw;
+    }
+    section.userSetting h2 {
+        font-size: 2.7em;
+    }
+    .infoContainer .inputContainer,
+    .btnContainer {
+        width: 90%;
+    }
+}
